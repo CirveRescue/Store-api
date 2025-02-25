@@ -48,3 +48,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/carritos/ver/{id}', [CarritoController::class, 'show']);
     Route::delete('/carritos/eliminar/{id}', [CarritoController::class, 'eliminarProducto']);
 });
+
+// Ruta para la finalizacion de la compra
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/compras/finalizar', [CompraController::class, 'finalizarCompra']);
+    Route::get('/compras/historial', [CompraController::class, 'historialCompras']);
+    Route::get('/ventas/historial', [CompraController::class, 'historialVentas']);
+});
