@@ -32,3 +32,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/tiendas/{id}', [TiendaController::class, 'update']);
     Route::delete('/tiendas/{id}', [TiendaController::class, 'destroy']);
 });
+
+//Rutas para los productos
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/tiendas/{tiendaId}/productos', [ProductoController::class, 'store']);
+    Route::get('/productos/{id}', [ProductoController::class, 'show']);
+    Route::put('/productos/{id}', [ProductoController::class, 'update']);
+    Route::delete('/productos/{id}', [ProductoController::class, 'destroy']);
+});
