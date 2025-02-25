@@ -40,3 +40,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/productos/{id}', [ProductoController::class, 'update']);
     Route::delete('/productos/{id}', [ProductoController::class, 'destroy']);
 });
+
+
+//Rutas para los carritos
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/carritos/agregar', [CarritoController::class, 'agregarProducto']);
+    Route::get('/carritos/ver/{id}', [CarritoController::class, 'show']);
+    Route::delete('/carritos/eliminar/{id}', [CarritoController::class, 'eliminarProducto']);
+});
