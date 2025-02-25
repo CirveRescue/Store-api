@@ -30,6 +30,8 @@ class AuthController extends Controller
                 'email' => $request->email,
                 'contrasena' => Hash::make($request->contrasena),
             ]);
+
+            
         }
 
 
@@ -68,5 +70,5 @@ class AuthController extends Controller
 
         return response()->json(['message' => 'Logout exitoso']);
     }
-    
+
 }
