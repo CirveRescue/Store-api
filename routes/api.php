@@ -25,3 +25,10 @@ Route::middleware('api')->group(function () {
     Route::middleware('auth:sanctum')->post('/auth/logout', [AuthController::class, 'logout']);
 });
 
+//Rutas para las tiendas
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/tiendas', [TiendaController::class, 'store']);
+    Route::get('/tiendas/{id}', [TiendaController::class, 'show']);
+    Route::put('/tiendas/{id}', [TiendaController::class, 'update']);
+    Route::delete('/tiendas/{id}', [TiendaController::class, 'destroy']);
+});
